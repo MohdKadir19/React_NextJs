@@ -1,15 +1,35 @@
+//by default, it is server componets
+//Client components:if we are use state then we will make client component(use 'use client'). it can not make async component
+//Server components:
+
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
+import { Work_Sans } from "next/font/google";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const workSans = Work_Sans({
+  variable: "--font-work_sans",
   subsets: ["latin"],
+
 });
 
 export const metadata: Metadata = {
@@ -24,9 +44,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+      {/* <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      > */}
+      <body className={`${workSans.variable} ${roboto.variable}`}>
+
         {children}
       </body>
     </html>

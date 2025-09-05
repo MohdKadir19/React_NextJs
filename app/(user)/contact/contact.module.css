@@ -1,0 +1,7 @@
+.contact{
+    display: flex;
+    height:calc(100vh - 68px);
+    align-items: center;
+    justify-content: center;
+
+}
