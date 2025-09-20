@@ -9,7 +9,23 @@ const page = async (props) => {
   const data = await res.json();
   const isMale = data.gender === "male";
   const cnfiProbability = Math.round(data.probability * 100);
-  console.log(data);
+  //console.log(data);
+  //validate : if username is empty
+  if (!searchName) {
+    return (
+      <div className="min-h-screen flex justify-center items-center font-work">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 text-center">
+          <h1 className="text-xl font-bold text-gray-800 mb-2">
+            No Data Found
+          </h1>
+          <p className="text-md font-normal text-gray-800 mb-2">
+            Please add <code>?name=username</code> to the URL
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex justify-center items-center font-work">
       <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full relative overflow-hidden p-4">
